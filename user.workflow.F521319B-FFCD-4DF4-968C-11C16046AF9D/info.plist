@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.mcduffie.sniptocodebox</string>
+	<key>connections</key>
+	<dict>
+		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2C287EB9-4EDB-4190-A03A-B2046BF4301F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Mike McDuffie</string>
+	<key>description</key>
+	<string>Create new snippet form selected text in Safari with Title &amp; URL</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Snip to Codebox</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>run script (POSIX file ((do shell script "pwd") &amp; "/snip-to-codebox.scpt")) with parameters {"{query}"}</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2C287EB9-4EDB-4190-A03A-B2046BF4301F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>snip</string>
+				<key>subtext</key>
+				<string>Create new Codebox snippet from selected text in Safari with Title &amp; URL</string>
+				<key>text</key>
+				<string>Snip to Codebox</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>264A09D9-DE34-403A-9524-C67F6525811D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+-- Key codes from Many Tricks' "Key Codes" app-- http://manytricks.com/keycodes/tell application "Safari"	--activate	set theURL to URL of front document	set theTitle to name of front document	set selectedText to (do JavaScript "(''+getSelection())" in document 1)end telltell application "CodeBox"	set frontApp to ""	repeat while frontApp is not equal to "Codebox" -- wait for Codebox to launch		activate		delay 0.25 -- wait .25 seconds		tell application "System Events" to set frontApp to name of first process whose frontmost is true	end repeat	delay 0.5 -- extra delay needed from Alfred, wait .25 seconds	if selectedText = "" then -- No text selected in browser			set the clipboard to theURL as string -- use the webpage as body of snippet	else		set the clipboard to selectedText as string	end if	delay 0.25 -- wait .25 seconds	tell application "System Events" to key code 45 using {command down, option down} -- ⌥⌘N (New Snippet from clipboard)	set the clipboard to theTitle as string	delay 0.25 -- wait .25 seconds	tell application "System Events" to key code 9 using command down -- ⌘V (Paste the Title)	delay 0.25 -- wait .25 seconds	tell application "System Events" to key code 48 -- ⇥ (Tab to Tags)	delay 0.25 -- wait .25 seconds	tell application "System Events" to key code 48 -- ⇥ (Tab to Asset Notes)	set the clipboard to theURL as string	delay 0.25 -- wait .25 seconds	tell application "System Events" to key code 9 using command down -- ⌘V (Paste the URL to Asset Notes)	--tell application "System Events" to key code 48 -- ⇥ (Tab to Snippet Body)end tell
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>2C287EB9-4EDB-4190-A03A-B2046BF4301F</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

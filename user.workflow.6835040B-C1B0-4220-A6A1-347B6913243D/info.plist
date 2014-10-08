@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.mcduffie.</string>
+	<key>connections</key>
+	<dict>
+		<key>B11B132B-4A61-4C05-8F4F-2111F454E6C6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>298CB8A4-0288-4464-8FE0-4D64F626B458</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Mike McDuffie</string>
+	<key>description</key>
+	<string>Edit /etc/hosts in BBedit</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Edit/Review Hosts File</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>hosts</string>
+				<key>subtext</key>
+				<string>Edit /etc/hosts in BBedit</string>
+				<key>text</key>
+				<string>Edit/Review Hosts File</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>B11B132B-4A61-4C05-8F4F-2111F454E6C6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+tell application "BBEdit"	open "/etc/hosts"	activateend tell
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>298CB8A4-0288-4464-8FE0-4D64F626B458</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>298CB8A4-0288-4464-8FE0-4D64F626B458</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>B11B132B-4A61-4C05-8F4F-2111F454E6C6</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

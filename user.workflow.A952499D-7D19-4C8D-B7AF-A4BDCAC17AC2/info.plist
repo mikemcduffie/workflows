@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.jdfwarrior.newfile</string>
+	<key>connections</key>
+	<dict>
+		<key>1799C742-563D-4CED-99A5-C33329FAB52D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E17222AB-CF18-49EC-8F7E-7B4461723B9D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>3D47EA32-DE99-4CF4-B041-8FC6C9E67110</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>39CDB711-2818-43DE-938D-62369451CEAD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>2DCCF0EC-7B40-47D3-8110-4B2086D2B4BE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>4E827841-F484-4162-BEAD-3C5D48EEA7F0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E17222AB-CF18-49EC-8F7E-7B4461723B9D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9C2EA986-0AAA-4E6A-83CE-8A429AB6DE26</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1799C742-563D-4CED-99A5-C33329FAB52D</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Create new file and navigate to it in Alfred</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A05A211B-AE38-4DDB-BF3F-63D8712D115F</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Create new file and navigate to it in Alfred</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>4E827841-F484-4162-BEAD-3C5D48EEA7F0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>David Ferguson</string>
+	<key>description</key>
+	<string>Create a new file in the specified location</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>New File</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>newfile</string>
+				<key>script</key>
+				<string>require('workflows.php');
+$w = new Workflows();
+
+$path = $w-&gt;get( 'path', 'settings.plist' );
+$filename = "{query}";
+
+$full = $path.'/'.$filename;
+
+$w-&gt;result( 'newfile', $full, 'Create new file named '.$filename, 'Create new file in '.$path, 'icon.png' );
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Create a new file in the previous path</string>
+				<key>title</key>
+				<string>Create new file</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>9C2EA986-0AAA-4E6A-83CE-8A429AB6DE26</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>file="{query}"
+touch "$file"
+echo $file</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4E827841-F484-4162-BEAD-3C5D48EEA7F0</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>file="{query}"
+touch "$file"
+echo $file</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1799C742-563D-4CED-99A5-C33329FAB52D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>script</key>
+				<string>require('workflows.php');
+$w = new Workflows();
+
+$path = "{query}";
+$w-&gt;set( 'path', $path, 'settings.plist' );
+</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2DCCF0EC-7B40-47D3-8110-4B2086D2B4BE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+ tell application "Alfred 2" to search q
+end alfred_script</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>A05A211B-AE38-4DDB-BF3F-63D8712D115F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "Alfred 2" to search "newfile "
+end alfred_script</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>39CDB711-2818-43DE-938D-62369451CEAD</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>File Created</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>E17222AB-CF18-49EC-8F7E-7B4461723B9D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>name</key>
+				<string>New File Here</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>3D47EA32-DE99-4CF4-B041-8FC6C9E67110</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>1799C742-563D-4CED-99A5-C33329FAB52D</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>2DCCF0EC-7B40-47D3-8110-4B2086D2B4BE</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>39CDB711-2818-43DE-938D-62369451CEAD</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>3D47EA32-DE99-4CF4-B041-8FC6C9E67110</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>4E827841-F484-4162-BEAD-3C5D48EEA7F0</key>
+		<dict>
+			<key>ypos</key>
+			<real>500</real>
+		</dict>
+		<key>9C2EA986-0AAA-4E6A-83CE-8A429AB6DE26</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>A05A211B-AE38-4DDB-BF3F-63D8712D115F</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>E17222AB-CF18-49EC-8F7E-7B4461723B9D</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>dferg.us</string>
+</dict>
+</plist>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>repairlaunchservices.matiaskorhonen.fi</string>
+	<key>connections</key>
+	<dict>
+		<key>2FCA4476-A6DC-407C-99A3-CE027172ED08</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A70A4E1E-712E-4575-967A-0AA64960904D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Matias Korhonen</string>
+	<key>description</key>
+	<string>Repair multiple entries in the “Open With” menu</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Repair LaunchServices</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>#/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -seed -r
+
+/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -seed -r -domain local -domain system -domain user
+
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>All done now</string>
+				<key>title</key>
+				<string>LaunchServices DB repaired</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>A70A4E1E-712E-4575-967A-0AA64960904D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>repair launchservices</string>
+				<key>subtext</key>
+				<string>Repair multiple entries in the “Open With” menu</string>
+				<key>text</key>
+				<string>Repair LaunchServices</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>2FCA4476-A6DC-407C-99A3-CE027172ED08</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>2FCA4476-A6DC-407C-99A3-CE027172ED08</key>
+		<dict>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+		<key>A70A4E1E-712E-4575-967A-0AA64960904D</key>
+		<dict>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<dict>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://matiaskorhonen.fi</string>
+</dict>
+</plist>

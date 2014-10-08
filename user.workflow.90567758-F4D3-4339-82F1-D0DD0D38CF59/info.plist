@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.lucatnt.massearch</string>
+	<key>connections</key>
+	<dict>
+		<key>EB1EF870-4CAB-46BF-9049-6DB91B4009D5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>773BBFFB-45F6-4640-BC47-948B3AAB7630</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>517EF7CA-7162-4039-811D-FA5B927ECB23</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Luca Zorzi</string>
+	<key>description</key>
+	<string>Searches the Mac App Store</string>
+	<key>disabled</key>
+	<true/>
+	<key>name</key>
+	<string>MAS Search</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>mas</string>
+				<key>subtext</key>
+				<string>Search the Mac App Store</string>
+				<key>text</key>
+				<string>MAS Search</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>EB1EF870-4CAB-46BF-9049-6DB91B4009D5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/App Store.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>773BBFFB-45F6-4640-BC47-948B3AAB7630</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>macappstore://ax.search.itunes.apple.com/WebObjects/MZSearch.woa/wa/search?q={query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>517EF7CA-7162-4039-811D-FA5B927ECB23</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>517EF7CA-7162-4039-811D-FA5B927ECB23</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>773BBFFB-45F6-4640-BC47-948B3AAB7630</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>EB1EF870-4CAB-46BF-9049-6DB91B4009D5</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.lucatnt.com/</string>
+</dict>
+</plist>

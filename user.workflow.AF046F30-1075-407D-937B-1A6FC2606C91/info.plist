@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.mcduffie.forceemptytrash</string>
+	<key>connections</key>
+	<dict>
+		<key>B11B132B-4A61-4C05-8F4F-2111F454E6C6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>13AB40F9-D6A4-4CA2-AC64-845FFA5F7DA9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Mike McDuffie</string>
+	<key>description</key>
+	<string>Force Empties Trash via Unix OOGA BOOGA.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Force Empty Trash</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>run script (POSIX file ((do shell script "pwd") &amp; "/Force_Empty_Trash.scpt")) with parameters {"{query}"}</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>13AB40F9-D6A4-4CA2-AC64-845FFA5F7DA9</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>forceempty</string>
+				<key>subtext</key>
+				<string>Force Empties Trash via Unix OOGA BOOGA.</string>
+				<key>text</key>
+				<string>Force empty trash</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>B11B132B-4A61-4C05-8F4F-2111F454E6C6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Adapted from Leo Marihart’ version:
+http://leoofborg.tumblr.com/
+
+Old notes:
+
+Went to the Alfred forums for a force empty trash WF. Found one that didn't work with no support. Scratched up this one from reading the forums myself. 
+
+This was made with no coffee on a whim. Do as thou wilt.
+
+WF icon: "Anger Symbol" emoji from OSX. Because you'll be using it in... in...
+
+Sebbo's AppleScript scrounged from here:
+
+http://www.alfredforum.com/topic/1474-force-empty-trash/
+
+Note that I don't delete the Apple System logs like he does. If you want to go BACK to the forums and append the rest of the command to do so to the NSApplescript part. I'd recommend NOT doing that, tho'.
+
+*** 
+
+Modified to actually work on any volume based on Sebbo's snippet on the forums, bundled into an NSApplescript to get the auth dialog needed by sudo to work magic. 
+
+Tested with a locked folder on ~/Desktop:
+Original v2 Force Empty Trash AlfW: FAIL
+ Sebbo's command properly embedded: PASS
+
+No auth dialog, no magic. BOOGA BOOGA.
+
+-Leo</string>
+	<key>uidata</key>
+	<dict>
+		<key>13AB40F9-D6A4-4CA2-AC64-845FFA5F7DA9</key>
+		<dict>
+			<key>ypos</key>
+			<real>70</real>
+		</dict>
+		<key>B11B132B-4A61-4C05-8F4F-2111F454E6C6</key>
+		<dict>
+			<key>ypos</key>
+			<real>70</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

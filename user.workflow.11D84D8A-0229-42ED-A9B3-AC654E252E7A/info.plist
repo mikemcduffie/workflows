@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.mcduffie.blockdomain</string>
+	<key>connections</key>
+	<dict>
+		<key>2774D082-D42D-443F-B186-AE66B877EFCB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>159A291E-3339-491E-8D3F-79091BE0319B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</key>
+		<array/>
+		<key>CD69778A-A49B-44D1-9F54-B24359DEF8B8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2774D082-D42D-443F-B186-AE66B877EFCB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Mike McDuffie</string>
+	<key>description</key>
+	<string>Add domain from current Safari tab or optionally enter the domain to block</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Block domain in /etc/hosts</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>run script (POSIX file ((do shell script "pwd") &amp; "/block-domain.scpt")) with parameters {"{query}"}</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2774D082-D42D-443F-B186-AE66B877EFCB</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Block domain in /etc/hosts</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>159A291E-3339-491E-8D3F-79091BE0319B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>block</string>
+				<key>subtext</key>
+				<string>Add domain from current Safari tab in /etc/hosts (optionally enter the domain)</string>
+				<key>text</key>
+				<string>Block Domain</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>CD69778A-A49B-44D1-9F54-B24359DEF8B8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+	property TheURL : "http://www.test.net/"
+	property SuffixOptions : {".com", ".org", ".net", ".int", ".edu", ".gov", ".mil", ".ac", ".ad", ".ae", ".af", ".ag", ".ai", ".al", ".am", ".an", ".ao", ".aq", ".ar", ".as", ".at", ".au", ".aw", ".ax", ".az", ".ba", ".bb", ".bd", ".be", ".bf", ".bg", ".bh", ".bi", ".bj", ".bm", ".bn", ".bo", ".br", ".bs", ".bt", ".bv", ".bw", ".by", ".bz", ".ca", ".cc", ".cd", ".cf", ".cg", ".ch", ".ci", ".ck", ".cl", ".cm", ".cn", ".co", ".cr", ".cs", " Ser", "The ", "Serb", ".cu", ".cv", ".cw", ".cx", ".cy", ".cz", ".dd", ".de", ".dj", ".dk", ".dm", ".do", ".dz", ".ec", ".ee", ".eg", ".eh", ".er", ".es", ".et", ".eu", ".fi", ".fj", ".fk", ".fm", ".fo", ".fr", ".ga", ".gb", ".gd", ".ge", ".gf", ".gg", ".gh", ".gi", ".gl", ".gm", ".gn", ".gp", ".gq", ".gr", ".gs", ".gt", ".gu", ".gw", ".gy", ".hk", ".hm", ".hn", ".hr", ".ht", ".hu", ".id", ".ie", ".il", ".im", ".in", ".io", ".iq", ".ir", ".is", ".it", ".je", ".jm", ".jo", ".jp", ".ke", ".kg", ".kh", ".ki", ".km", ".kn", ".kp", ".kr", ".kw", ".ky", ".kz", ".la", ".lb", ".lc", ".li", ".lk", ".lr", ".ls", ".lt", ".lu", ".lv", ".ly", ".ma", ".mc", ".md", ".me", ".mg", ".mh", ".mk", ".ml", ".mm", ".mn", ".mo", ".mp", ".mq", ".mr", ".ms", ".mt", ".mu", ".mv", ".mw", ".mx", ".my", ".mz", ".na", ".nc", ".ne", ".nf", ".ng", ".ni", ".nl", ".no", ".np", ".nr", ".nu", ".nz", ".om", ".pa", ".pe", ".pf", ".pg", ".ph", ".pk", ".pl", ".pm", ".pn", ".pr", ".ps", ".pt", ".pw", ".py", ".qa", ".re", ".ro", ".rs", ".ru", ".rw", ".sa", ".sb", ".sc", ".sd", ".se", ".sg", ".sh", ".si", ".sj", " Jan", ".sk", ".sl", ".sm", ".sn", ".so", ".sr", ".ss", ".st", ".su", ".sv", ".sx", ".sy", ".sz", ".tc", ".td", ".tf", ".tg", ".th", ".tj", ".tk", ".tl", ".tm", ".tn", ".to", ".tp", ".tr", ".tt", ".tv", ".tw", ".tz", ".ua", ".ug", ".uk", ".us", ".uy", ".uz", ".va", ".vc", ".ve", ".vg", ".vi", ".vn", ".vu", ".wf", ".ws", ".ye", ".yt", ".yu", ".za", ".zm", ".zr", ".zr ", ".zw"}
+	
+	if q is equal to "" then
+		tell application "Safari"
+			tell document 1
+				set TheURL to URL
+			end tell
+		end tell
+		
+		set TheSuffix to ""
+		repeat with CurrentSuffix in SuffixOptions
+			if TheURL contains (CurrentSuffix &amp; "/") then
+				set TheSuffix to CurrentSuffix
+				exit repeat
+			end if
+		end repeat
+		if TheSuffix is not equal to "" then
+			set SuffixOffset to offset of (CurrentSuffix &amp; "/") in TheURL
+			set JustDomain to (characters 1 thru (SuffixOffset - 1) of TheURL) as string
+			set PointOffSet to 0
+			repeat with NegOffSet from (length of JustDomain) to 1 by -1
+				if character NegOffSet of JustDomain is "." or character NegOffSet of JustDomain is "/" then
+					set PointOffSet to NegOffSet
+					exit repeat
+				end if
+			end repeat
+			set JustDomain to (characters (PointOffSet + 1) thru (length of JustDomain) of JustDomain as string) &amp; CurrentSuffix
+		end if
+		
+		
+		
+	else
+		set JustDomain to q
+		set TheSuffix to ""
+		repeat with CurrentSuffix in SuffixOptions
+			if JustDomain ends with (CurrentSuffix) then
+				set TheSuffix to CurrentSuffix
+				exit repeat
+			end if
+		end repeat
+		if TheSuffix = "" then
+			#display dialog "You did not enter a valid domain." with icon stop buttons {"Quit"}
+			return "You did not enter a valid domain."
+		end if
+	end if
+	
+	
+	if JustDomain = TheURL then
+		#display dialog "Could not find the domain from the URL." with icon stop buttons {"Quit"}
+		return "Could not find the domain from the URL." &amp; TheURL
+	else
+		set hostsLine to return &amp; "127.0.0.1 " &amp; JustDomain
+		set output to (do shell script "echo '" &amp; hostsLine &amp; "' &gt;&gt; /private/etc/hosts" with administrator privileges without altering line endings)
+		if output is not equal to "0" then
+			return "Error, /etc/hosts was NOT updated."
+		end if
+	end if
+	
+	set output to (do shell script "killall -HUP mDNSResponder;echo $?" password pwd with administrator privileges)
+	
+	if output is equal to "0" then
+		return "Success, /etc/hosts updated &amp; the DNS cache successfully flushed."
+	else
+		return "Error, /etc/hosts was updated, but the DNS cache was NOT flushed."
+	end if
+	
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>v 1.1
+
+- now captures complete domain address (hosts file doesn’t support wildcards for subdomains
+- changed DNS flush with version check for OS X 10.10 (Yosemite)
+- changed separator between IP address and domain to TAB</string>
+	<key>uidata</key>
+	<dict>
+		<key>159A291E-3339-491E-8D3F-79091BE0319B</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>2774D082-D42D-443F-B186-AE66B877EFCB</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</key>
+		<dict>
+			<key>ypos</key>
+			<real>240</real>
+		</dict>
+		<key>CD69778A-A49B-44D1-9F54-B24359DEF8B8</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

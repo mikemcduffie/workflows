@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.mcduffie.regexr</string>
+	<key>connections</key>
+	<dict>
+		<key>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8DFD7595-3F0B-42D3-B7D4-1C9958F654D8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Mike McDuffie</string>
+	<key>description</key>
+	<string>Learn, Build &amp; Test RegEx</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>RegExr</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>regexr</string>
+				<key>subtext</key>
+				<string>Open new Safari window for RegExr - Learn, Build &amp; Text Regex</string>
+				<key>text</key>
+				<string>RegExr</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "Safari"
+  	activate
+    		make new document with properties {URL:"http://www.regexr.com"}
+	end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>8DFD7595-3F0B-42D3-B7D4-1C9958F654D8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>8DFD7595-3F0B-42D3-B7D4-1C9958F654D8</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

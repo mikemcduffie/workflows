@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.katienolan.moveto</string>
+	<key>connections</key>
+	<dict>
+		<key>B142F592-0226-401A-876C-C152B4528F56</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B3C596D9-4BD5-442D-8CFE-9FEE779991FA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B3C596D9-4BD5-442D-8CFE-9FEE779991FA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9449FD82-3993-4EFC-BDC8-68545D9CD946</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Katie Nolan</string>
+	<key>description</key>
+	<string>Moves the selected finder item to the folder of your choice</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Move To</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemAlternateNames</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>move</string>
+				<key>scopes</key>
+				<array>
+					<string>~</string>
+					<string>~/Documents</string>
+					<string>~/Documents/Roleplay</string>
+					<string>~/Documents/Roleplay/Icons</string>
+					<string>~/Downloads</string>
+					<string>~/Dropbox</string>
+					<string>~/Movies</string>
+					<string>~/Pictures</string>
+					<string>~/Public</string>
+					<string>~/Sites</string>
+				</array>
+				<key>title</key>
+				<string>move selected file to</string>
+				<key>types</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>B142F592-0226-401A-876C-C152B4528F56</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+ 
+tell application "Finder"
+set source to selection
+end tell
+ 
+if (count of source) is greater than 1 then
+set fileList to every item of source
+repeat with source in fileList
+doMove(source, q)
+end repeat
+else
+doMove(source, q)
+end if
+ 
+end alfred_script
+ 
+on doMove(source, destination)
+ 
+set source to (POSIX path of (the source as alias))
+set destination to POSIX path of destination
+ 
+do shell script "mv" &amp; space &amp; quoted form of POSIX path of source &amp; space &amp; quoted form of POSIX path of destination
+ 
+end doMove</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>B3C596D9-4BD5-442D-8CFE-9FEE779991FA</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>It moved!</string>
+				<key>title</key>
+				<string>Result</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>9449FD82-3993-4EFC-BDC8-68545D9CD946</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Based on the Text Tools workflow by Matt Healy
+Icon from iconnice.com
+
+If you’re having trouble having Alfred recognize the folders you’re looking for, you can change the search scope by double clicking on the “File filter” and going to the “search scope” tab on top.</string>
+	<key>uidata</key>
+	<dict>
+		<key>9449FD82-3993-4EFC-BDC8-68545D9CD946</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>B142F592-0226-401A-876C-C152B4528F56</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>B3C596D9-4BD5-442D-8CFE-9FEE779991FA</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

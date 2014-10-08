@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.mcduffie.cititationgenerator</string>
+	<key>connections</key>
+	<dict>
+		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C491C645-3374-4FF5-9067-00BDBB5BEB80</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C491C645-3374-4FF5-9067-00BDBB5BEB80</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>629441C7-E4EB-499B-9713-F0F01B900E95</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Mike (made with ♡♡♡)</string>
+	<key>description</key>
+	<string>Website citatition generator (Title, Date Modified, URL)</string>
+	<key>disabled</key>
+	<true/>
+	<key>name</key>
+	<string>Cititation Generator</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+tell application "Safari"	set theURL to URL of front document	set theTitle to name of front document	set dateModified to ""	set dateModified to do JavaScript "dateModified = document.lastModified;" in document 1	set dateModified to (do shell script "echo " &amp; dateModified &amp; " | cut -d ' ' -f 1")	-- Alternate method (depends on string length being constant):	--set dateModified to do JavaScript "dateModified = document.lastModified; dateModified= dateModified.substring(0, 10);" in document 1	set dateModified to dateModified as string	set myText to "[Author: Last Name, First Name]. " &amp; theTitle &amp; ". " &amp; dateModified &amp; ". [Organization]. &lt;" &amp; theURL &amp; "&gt;"	end tell--display dialog myTextset the clipboard to myTextbeepreturn "Citation for " &amp; quote &amp; theTitle &amp; quote &amp; " was copied to the clipboard."end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>C491C645-3374-4FF5-9067-00BDBB5BEB80</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Cititation Generator</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>629441C7-E4EB-499B-9713-F0F01B900E95</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>cite</string>
+				<key>subtext</key>
+				<string>Website citatition generator (Title, Date Modified, URL)</string>
+				<key>text</key>
+				<string>Cititation Generator</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>629441C7-E4EB-499B-9713-F0F01B900E95</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>C491C645-3374-4FF5-9067-00BDBB5BEB80</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

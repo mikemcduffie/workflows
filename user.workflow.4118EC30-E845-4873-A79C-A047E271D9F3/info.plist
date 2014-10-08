@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.mcduffie.mac-chime</string>
+	<key>connections</key>
+	<dict>
+		<key>16BBC323-C7E8-4F1D-855B-B1B95136627E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D61A6993-6D0E-4785-9B18-DD5F3C82055A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>CB675A13-9A5A-4CE2-8DD1-4933B5798B6A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CF903327-F622-4001-9C67-2B2B6C84FEC3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>CF903327-F622-4001-9C67-2B2B6C84FEC3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7C2514B1-D80C-4E12-BFCA-E0BD62B7A589</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D866DA1D-5E55-49F2-AF16-AB9C87C22355</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>16BBC323-C7E8-4F1D-855B-B1B95136627E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Mike McDuffie</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<true/>
+	<key>name</key>
+	<string>Chime Disable/Enable</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Enjoy the silence...</string>
+				<key>title</key>
+				<string>Startup Chime Disabled</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D61A6993-6D0E-4785-9B18-DD5F3C82055A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>chime-disable</string>
+				<key>text</key>
+				<string>Disable Mac Startup Chime</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D866DA1D-5E55-49F2-AF16-AB9C87C22355</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>osascript -e  "do shell script \"sudo defaults write com.apple.loginwindow LogoutHook ~/scripts/muteOn.sh; sudo defaults write com.apple.loginwindow LoginHook ~/scripts/muteOff.sh\" with administrator privileges"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>16BBC323-C7E8-4F1D-855B-B1B95136627E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>osascript -e  "do shell script \"sudo defaults delete com.apple.loginwindow LoginHook; sudo defaults delete com.apple.loginwindow LogoutHook\" with administrator privileges"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>CF903327-F622-4001-9C67-2B2B6C84FEC3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>chime-enable</string>
+				<key>text</key>
+				<string>Enable Mac Startup Chime</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>CB675A13-9A5A-4CE2-8DD1-4933B5798B6A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Steve wants the “good one”.   :-)</string>
+				<key>title</key>
+				<string>Startup Chime Enabled</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>7C2514B1-D80C-4E12-BFCA-E0BD62B7A589</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Disable the Startup ChimeP
+
+You Mac likes to drop a loud tone when you boot up that's meant to tell you that everything is working. That start-up chime is fine for most people, but it's often a problem if you're in class or somewhere else where you need to keep your Mac quiet. To disable that sound permanently, just enter this into Terminal:P
+
+sudo nvram SystemAudioVolume=%80
+
+To reenable:
+
+sudo nvram -d SystemAudioVolume
+
+http://lifehacker.com/and-whats-the-command-to-get-it-back-1477948972
+
+
+
+History of the sound:
+
+http://news.softpedia.com/news/Did-You-Know-The-Story-Behind-the-OS-X-Chime-Startup-Sound-98713.shtml
+
+The Macintosh startup sound, or the “Chime,” is the single note, or chord (depending on model type) played when a Macintosh computer is turned on. The sound we're all used to hearing when starting up our Macs has somewhat of a historical value.
+
+Jim Reekes, a programmer with Apple Computer for 12 years, significantly affected the Mac OS X operating system, most notably System 7 and QuickTime. However, he was also the one responsible for creating many of the system sounds for Apple's OS.
+
+Some of the most famous creations during his time with Apple included the system sound sosumi and the Macintosh OS startup sound. Reekes decided to let the world in on how he created the Mac OS X chime, and how Apple (Steve Jobs) came around to adopting it as the sound that would be typical to a Macintosh computer booting.
+
+“The startup sound was done in my home studio on a Korg Wavestation,” Reekes said in a statement. “It's a C Major chord, played with both hands stretched out as wide as possible (with 3rd at the top, if I recall). This just sounded right to me. I wanted something really fat, heavy bass, high notes, and a sharp attack. The chiffy sound was from pan pipes and something like a stick hit (I'm testing my memory here). I wanted lots of evolving timbres, stereo phasing, and reverb, for further richness.”
+
+“Mac people are very familiar with the sound, after restarting their machines too often. In fact, that was one of the issues I was conscious of when designing the sound. Turning the Mac on is one thing, but being forced to reboot from a crash is a totally different experience. I wanted to avoid a sound that would be associated with the crash. I wanted it to sound more like a palette cleanser.” he explained.
+
+“After I changed the startup sound (which required much persuasion and working around the system), the ROM engineers continued changing it with each new machine. Some of them were weak, such as the Stanley Jordon guitar strum used on the first PowerMacs. I objected to it, because that sound had no 'power.' The engineer wasn't a recording engineer, and not familiar enough with audio. The sound was hallow and without depth.”
+
+Then came 1997, Reeks revealed, when Steve Jobs returned to Apple with new ideas. Choosing a cool startup sound for OS X. was among those ideas. Thus, Apple finally went with Reekes' chime, also known internally as the “good one,” according to the ex Apple staffer: “When Steve Jobs returned in 1997, I heard he wanted only one sound for all Macs,” Reeks said. “He wanted the 'good one,' which was the one I created.” Reekes finished the small history lesson, noting that this was “how [he] heard the story” while he was still working at Apple.</string>
+	<key>uidata</key>
+	<dict>
+		<key>16BBC323-C7E8-4F1D-855B-B1B95136627E</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>7C2514B1-D80C-4E12-BFCA-E0BD62B7A589</key>
+		<dict>
+			<key>ypos</key>
+			<real>190</real>
+		</dict>
+		<key>CB675A13-9A5A-4CE2-8DD1-4933B5798B6A</key>
+		<dict>
+			<key>ypos</key>
+			<real>190</real>
+		</dict>
+		<key>CF903327-F622-4001-9C67-2B2B6C84FEC3</key>
+		<dict>
+			<key>ypos</key>
+			<real>190</real>
+		</dict>
+		<key>D61A6993-6D0E-4785-9B18-DD5F3C82055A</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>D866DA1D-5E55-49F2-AF16-AB9C87C22355</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

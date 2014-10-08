@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.mcduffie.keyboardshortcuts</string>
+	<key>connections</key>
+	<dict>
+		<key>4161B4F8-44E9-4BE1-8171-C3507E9932C6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C5887D40-F2E5-492D-8636-1373B88CCB2D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Mike McDuffie</string>
+	<key>description</key>
+	<string>Keyword/Hotkey shortcuts for simple functions</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Shortcuts</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>bbedit ~/bin/dotfiles/bash/aliases</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>06C9C4A9-38CE-441A-8D06-E2F2D8B39B60</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+set myAliases to (path to home folder as text) &amp; "bin:dotfiles:bash:aliases"tell application "BBEdit" to open myAliases
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>C5887D40-F2E5-492D-8636-1373B88CCB2D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>ea</string>
+				<key>text</key>
+				<string>Edit Aliases in BBEdit</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>4161B4F8-44E9-4BE1-8171-C3507E9932C6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>06C9C4A9-38CE-441A-8D06-E2F2D8B39B60</key>
+		<dict>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+		<key>4161B4F8-44E9-4BE1-8171-C3507E9932C6</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>C5887D40-F2E5-492D-8636-1373B88CCB2D</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

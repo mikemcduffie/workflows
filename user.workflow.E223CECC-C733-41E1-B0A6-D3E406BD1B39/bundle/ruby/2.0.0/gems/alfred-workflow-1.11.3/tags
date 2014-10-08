@@ -1,0 +1,97 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	Development	//
+Alfred	lib/alfred.rb	/^module Alfred$/;"	m	language:Ruby
+Alfred	lib/alfred/feedback.rb	/^module Alfred$/;"	m	language:Ruby
+Alfred	lib/alfred/feedback/file_item.rb	/^module Alfred$/;"	m	language:Ruby
+Alfred	lib/alfred/feedback/item.rb	/^module Alfred$/;"	m	language:Ruby
+Alfred	lib/alfred/feedback/webloc_item.rb	/^module Alfred$/;"	m	language:Ruby
+Alfred	lib/alfred/setting.rb	/^module Alfred$/;"	m	language:Ruby
+Alfred	lib/alfred/ui.rb	/^module Alfred$/;"	m	language:Ruby
+Alfred	lib/alfred/util.rb	/^module Alfred$/;"	m	language:Ruby
+Alfred	lib/alfred/version.rb	/^module Alfred$/;"	m	language:Ruby
+AlfredError	lib/alfred.rb	/^  class AlfredError < RuntimeError$/;"	c	language:Ruby	class:Alfred
+CachedFeedback	lib/alfred/feedback.rb	/^  class CachedFeedback < Feedback$/;"	c	language:Ruby	class:Alfred
+Core	lib/alfred.rb	/^  class Core$/;"	c	language:Ruby
+Feedback	lib/alfred/feedback.rb	/^  class Feedback$/;"	c	language:Ruby	class:Alfred
+Feedback	lib/alfred/feedback/file_item.rb	/^  class Feedback$/;"	c	language:Ruby	class:Alfred
+Feedback	lib/alfred/feedback/item.rb	/^  class Feedback$/;"	c	language:Ruby	class:Alfred
+Feedback	lib/alfred/feedback/webloc_item.rb	/^  class Feedback$/;"	c	language:Ruby	class:Alfred
+FileItem	lib/alfred/feedback/file_item.rb	/^    class FileItem < Item$/;"	c	language:Ruby	class:Alfred.Feedback
+InvalidFormat	lib/alfred.rb	/^  class InvalidFormat       < AlfredError; status_code(11) ; end$/;"	c	language:Ruby	class:Alfred
+Item	lib/alfred/feedback/item.rb	/^    class Item$/;"	c	language:Ruby	class:Alfred.Feedback
+LogUI	lib/alfred/ui.rb	/^  class LogUI < ::Logger$/;"	c	language:Ruby	class:Alfred
+NoBundleIDError	lib/alfred.rb	/^  class NoBundleIDError     < AlfredError; status_code(2) ; end$/;"	c	language:Ruby	class:Alfred
+NoMethodError	lib/alfred.rb	/^  class NoMethodError       < AlfredError; status_code(13) ; end$/;"	c	language:Ruby	class:Alfred
+ObjCError	lib/alfred.rb	/^  class ObjCError           < AlfredError; status_code(1) ; end$/;"	c	language:Ruby	class:Alfred
+PathError	lib/alfred.rb	/^  class PathError           < AlfredError; status_code(14) ; end$/;"	c	language:Ruby	class:Alfred
+PlistEnd	lib/alfred/setting.rb	/^    class PlistEnd$/;"	c	language:Ruby	class:Alfred.Setting
+Setting	lib/alfred/setting.rb	/^  class Setting$/;"	c	language:Ruby	class:Alfred
+String	lib/alfred/util.rb	/^class String$/;"	c	language:Ruby
+Util	lib/alfred/util.rb	/^  module Util$/;"	m	language:Ruby	class:Alfred
+WeblocItem	lib/alfred/feedback/webloc_item.rb	/^    class WeblocItem < FileItem$/;"	c	language:Ruby	class:Alfred.Feedback
+YamlEnd	lib/alfred/setting.rb	/^    class YamlEnd$/;"	c	language:Ruby	class:Alfred.Setting
+add_file_item	lib/alfred/feedback.rb	/^    def add_file_item(path, opts = {})$/;"	f	language:Ruby	class:Alfred.Feedback
+add_item	lib/alfred/feedback.rb	/^    def add_item(opts = {})$/;"	f	language:Ruby	class:Alfred.Feedback
+all_title_match?	lib/alfred/feedback/item.rb	/^      def all_title_match?(query)$/;"	f	language:Ruby	class:Alfred.Feedback.Item
+build_regexp	lib/alfred/feedback/item.rb	/^      def build_regexp(query, option)$/;"	f	language:Ruby	class:Alfred.Feedback.Item
+bundle_id	lib/alfred.rb	/^    def bundle_id$/;"	f	language:Ruby	class:Core
+cache_file	lib/alfred/feedback.rb	/^    def cache_file$/;"	f	language:Ruby	class:Alfred.CachedFeedback
+default_query	lib/alfred/feedback/item.rb	/^      def default_query(query)$/;"	f	language:Ruby	class:Alfred.Feedback.Item
+dump	lib/alfred/feedback.rb	/^    def dump(to_file)$/;"	f	language:Ruby	class:Alfred.Feedback
+dump	lib/alfred/setting.rb	/^      def dump(settings = nil, opts = {})$/;"	f	language:Ruby	class:Alfred.Setting.PlistEnd
+dump	lib/alfred/setting.rb	/^      def dump(settings = nil, opts = {})$/;"	f	language:Ruby	class:Alfred.Setting.YamlEnd
+dump	lib/alfred/setting.rb	/^    def dump(settings = nil, opts = {})$/;"	f	language:Ruby	class:Alfred.Setting
+escape_applescript	lib/alfred/util.rb	/^      def escape_applescript(str)$/;"	f	language:Ruby	class:Alfred.Util
+feedback	lib/alfred.rb	/^    def feedback$/;"	f	language:Ruby	class:Core
+format	lib/alfred/setting.rb	/^    def format$/;"	f	language:Ruby	class:Alfred.Setting
+front_appid	lib/alfred.rb	/^    def front_appid$/;"	f	language:Ruby
+front_appname	lib/alfred.rb	/^    def front_appname$/;"	f	language:Ruby
+get_cached_feedback	lib/alfred/feedback.rb	/^    def get_cached_feedback$/;"	f	language:Ruby	class:Alfred.CachedFeedback
+get_format_class	lib/alfred/setting.rb	/^    def get_format_class(format_class)$/;"	f	language:Ruby	class:Alfred.Setting
+help_feedback	lib/alfred.rb	/^    def help_feedback(opts = {})$/;"	f	language:Ruby	class:Core
+ignorecase_query	lib/alfred/feedback/item.rb	/^      def ignorecase_query(query)$/;"	f	language:Ruby	class:Alfred.Feedback.Item
+info_plist	lib/alfred.rb	/^    def info_plist$/;"	f	language:Ruby	class:Core
+init_workflow_setting	lib/alfred.rb	/^    def init_workflow_setting(opts)$/;"	f	language:Ruby	class:Core
+initialize	lib/alfred.rb	/^    def initialize(with_help_feedback = false,$/;"	f	language:Ruby	class:Core
+initialize	lib/alfred/feedback.rb	/^    def initialize$/;"	f	language:Ruby	class:Alfred.Feedback
+initialize	lib/alfred/feedback.rb	/^    def initialize(alfred, &blk)$/;"	f	language:Ruby	class:Alfred.CachedFeedback
+initialize	lib/alfred/feedback/file_item.rb	/^      def initialize(path, opts = {})$/;"	f	language:Ruby	class:Alfred.Feedback.FileItem
+initialize	lib/alfred/feedback/item.rb	/^      def initialize(title, opts = {})$/;"	f	language:Ruby	class:Alfred.Feedback.Item
+initialize	lib/alfred/feedback/webloc_item.rb	/^      def initialize(title, opts = {})$/;"	f	language:Ruby	class:Alfred.Feedback.WeblocItem
+initialize	lib/alfred/setting.rb	/^      def initialize(alfred, file)$/;"	f	language:Ruby	class:Alfred.Setting.PlistEnd
+initialize	lib/alfred/setting.rb	/^      def initialize(alfred, file)$/;"	f	language:Ruby	class:Alfred.Setting.YamlEnd
+initialize	lib/alfred/setting.rb	/^    def initialize(alfred, &blk)$/;"	f	language:Ruby	class:Alfred.Setting
+initialize	lib/alfred/ui.rb	/^    def initialize(id, to_file=nil)$/;"	f	language:Ruby	class:Alfred.LogUI
+load	lib/alfred/feedback.rb	/^    def load(from_file)$/;"	f	language:Ruby	class:Alfred.Feedback
+load	lib/alfred/setting.rb	/^      def load$/;"	f	language:Ruby	class:Alfred.Setting.PlistEnd
+load	lib/alfred/setting.rb	/^      def load$/;"	f	language:Ruby	class:Alfred.Setting.YamlEnd
+load	lib/alfred/setting.rb	/^    def load$/;"	f	language:Ruby	class:Alfred.Setting
+log_file	lib/alfred/ui.rb	/^    def log_file$/;"	f	language:Ruby	class:Alfred.LogUI
+make_webloc	lib/alfred/util.rb	/^      def make_webloc(name, url, folder=nil, comment = '')$/;"	f	language:Ruby	class:Alfred.Util
+match?	lib/alfred/feedback/file_item.rb	/^      def match?(query)$/;"	f	language:Ruby	class:Alfred.Feedback.FileItem
+match?	lib/alfred/feedback/item.rb	/^      def match?(query)$/;"	f	language:Ruby	class:Alfred.Feedback.Item
+put_cached_feedback	lib/alfred/feedback.rb	/^    def put_cached_feedback$/;"	f	language:Ruby	class:Alfred.CachedFeedback
+rescue_feedback	lib/alfred.rb	/^    def rescue_feedback(opts = {})$/;"	f	language:Ruby	class:Core
+search	lib/alfred.rb	/^    def search(query = "")$/;"	f	language:Ruby	class:Alfred
+setting	lib/alfred.rb	/^    def setting(&blk)$/;"	f	language:Ruby	class:Core
+setting_file	lib/alfred/setting.rb	/^    def setting_file$/;"	f	language:Ruby	class:Alfred.Setting
+smartcase_query	lib/alfred/feedback/item.rb	/^      def smartcase_query(query)$/;"	f	language:Ruby	class:Alfred.Feedback.Item
+status_code	lib/alfred.rb	/^    def self.status_code(code)$/;"	F	language:Ruby	class:Alfred.AlfredError
+storage_path	lib/alfred.rb	/^    def storage_path$/;"	f	language:Ruby	class:Core
+strip_heredoc	lib/alfred/util.rb	/^  def strip_heredoc$/;"	f	language:Ruby	class:String
+title_match?	lib/alfred/feedback/item.rb	/^      def title_match?(query)$/;"	f	language:Ruby	class:Alfred.Feedback.Item
+to_xml	lib/alfred/feedback.rb	/^    def to_xml(with_query = '', items = @items)$/;"	f	language:Ruby	class:Alfred.Feedback
+to_xml	lib/alfred/feedback/item.rb	/^      def to_xml$/;"	f	language:Ruby	class:Alfred.Feedback.Item
+ui	lib/alfred.rb	/^    def ui$/;"	f	language:Ruby	class:Core
+use_cache_file	lib/alfred/feedback.rb	/^    def use_cache_file(opts = {})$/;"	f	language:Ruby	class:Alfred.CachedFeedback
+use_setting_file	lib/alfred/setting.rb	/^    def use_setting_file(opts = {})$/;"	f	language:Ruby	class:Alfred.Setting
+validate_format	lib/alfred/setting.rb	/^    def validate_format$/;"	f	language:Ruby	class:Alfred.Setting
+volatile_storage_path	lib/alfred.rb	/^    def volatile_storage_path$/;"	f	language:Ruby	class:Core
+with_cached_feedback	lib/alfred.rb	/^    def with_cached_feedback(&blk)$/;"	f	language:Ruby	class:Core
+with_friendly_error	lib/alfred.rb	/^    def with_friendly_error(alfred = Alfred::Core.new, &blk)$/;"	f	language:Ruby	class:Alfred
+workflow_folder	lib/alfred.rb	/^    def workflow_folder$/;"	f	language:Ruby	class:Alfred
+workflow_setting	lib/alfred.rb	/^    def workflow_setting(opts = {})$/;"	f	language:Ruby	class:Core

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.clintonstrong.SearchTabs</string>
+	<key>connections</key>
+	<dict>
+		<key>082D8CDA-C699-4D3B-BE03-C1DC2367DD86</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>82356518-2006-4CB2-BD26-81B8812CED69</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D0CA7F06-A6F1-404F-95BE-D010D2A75155</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>082D8CDA-C699-4D3B-BE03-C1DC2367DD86</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Clinton Strong</string>
+	<key>description</key>
+	<string>Search your Chrome or Safari tabs</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Search Browser Tabs</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>38</integer>
+				<key>keyword</key>
+				<string>tabs</string>
+				<key>runningsubtext</key>
+				<string>Retrieving tabs...</string>
+				<key>script</key>
+				<string>/usr/bin/ruby search_tabs.rb "{query}"</string>
+				<key>subtext</key>
+				<string>Search tabs in Safari and Chrome</string>
+				<key>title</key>
+				<string>Search tabs...</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>082D8CDA-C699-4D3B-BE03-C1DC2367DD86</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>38</integer>
+				<key>script</key>
+				<string>/usr/bin/ruby activate_tab.rb "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>82356518-2006-4CB2-BD26-81B8812CED69</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>D0CA7F06-A6F1-404F-95BE-D010D2A75155</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>082D8CDA-C699-4D3B-BE03-C1DC2367DD86</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>82356518-2006-4CB2-BD26-81B8812CED69</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>D0CA7F06-A6F1-404F-95BE-D010D2A75155</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://clintonstrong.com/</string>
+</dict>
+</plist>

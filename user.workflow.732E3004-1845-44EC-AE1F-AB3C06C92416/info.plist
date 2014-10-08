@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.mcduffie.resizefindericons</string>
+	<key>connections</key>
+	<dict>
+		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AFA2E28F-6BF4-4D0C-81F8-6F4951C4A079</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Mike McDuffie</string>
+	<key>description</key>
+	<string>Test script to manually eneter slider value for icon size</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Resize Finder Icons</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>icon</string>
+				<key>text</key>
+				<string>Resize Finder Icons</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>264A09D9-DE34-403A-9524-C67F6525811D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>run script (POSIX file ((do shell script "pwd") &amp; "/icon-resize.scpt")) with parameters {"{query}"}</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>AFA2E28F-6BF4-4D0C-81F8-6F4951C4A079</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>AFA2E28F-6BF4-4D0C-81F8-6F4951C4A079</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

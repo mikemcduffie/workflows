@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.deanishe.alfred-appscripts</string>
+	<key>connections</key>
+	<dict>
+		<key>6D6DEF2A-5AF8-4EE9-90B8-F54C11E3660C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E8FFFB36-186D-46CC-995C-EBFCFA84296F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E91E210D-F78B-4CB1-8B44-9A857473689C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6D6DEF2A-5AF8-4EE9-90B8-F54C11E3660C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>AF9E613E-CBA5-478B-B924-C1D0B0D88D1C</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Open this script in AppleScript Editor</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>DD5D1469-1BD0-4F79-8E21-E3D2074DD472</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Reveal this script in Finder</string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Dean Jackson</string>
+	<key>description</key>
+	<string>Show Scripts for the Active Application</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>AppScripts</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>osascript "{query}" 2&gt;&amp;1 &gt; /dev/null
+
+echo $(basename "{query}")</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6D6DEF2A-5AF8-4EE9-90B8-F54C11E3660C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>.as</string>
+				<key>runningsubtext</key>
+				<string>Loading scripts…</string>
+				<key>script</key>
+				<string>python scripts.py "{query}"</string>
+				<key>subtext</key>
+				<string>Run a script from the active applications Scripts folder</string>
+				<key>title</key>
+				<string>Run Application Script</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E91E210D-F78B-4CB1-8B44-9A857473689C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Script Finished</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>E8FFFB36-186D-46CC-995C-EBFCFA84296F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string>/Applications/Utilities/AppleScript Editor.app</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>AF9E613E-CBA5-478B-B924-C1D0B0D88D1C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.action.revealfile</string>
+			<key>uid</key>
+			<string>DD5D1469-1BD0-4F79-8E21-E3D2074DD472</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>http://www.alfredforum.com/topic/4218-appscripts-—-list-search-and-run-applescripts-for-the-active-application/
+
+Download
+
+The workflow can be downloaded from GitHub or Packal.
+
+https://github.com/deanishe/alfred-appscripts/releases
+http://www.packal.org/workflow/appscripts
+
+The source code is also available on GitHub.
+
+https://github.com/deanishe/alfred-appscripts
+
+Usage
+.as [query] — Show/search list of AppleScripts for the active application
+↩ — Run the selected script
+⌘+↩ — Open the selected script in AppleScript Editor
+⌥+↩ — Reveal the selected script in Finder
+Where are these scripts?
+
+The workflow will search in two places:
+Application-specific script directories under ~/Library/Scripts/Applications matching application names, e.g. Safari scripts are stored in ~/Library/Scripts/Applications/Safari. (This is where FastScripts looks.)
+In a Scripts subdirectory of the active application's Application Support directory, e.g. BBEdit scripts are stored in ~/Library/Application Support/BBEdit/Scripts.
+Any .scpt or .applescript files found within the appropriate directory for the currently-active application will be shown.
+
+Licence, thanks
+
+The workflow code and the bundled Alfred-Workflow library are both licensed under the MIT Licence.
+
+https://github.com/deanishe/alfred-workflow
+
+The workflow icon (http://destegabry.deviantart.com/art/AppleScript-Folder-79793515), by destegabry, is licensed under the Creative Commons Attribution-Noncommercial 3.0 License.</string>
+	<key>uidata</key>
+	<dict>
+		<key>6D6DEF2A-5AF8-4EE9-90B8-F54C11E3660C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>AF9E613E-CBA5-478B-B924-C1D0B0D88D1C</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>DD5D1469-1BD0-4F79-8E21-E3D2074DD472</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>E8FFFB36-186D-46CC-995C-EBFCFA84296F</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E91E210D-F78B-4CB1-8B44-9A857473689C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>www.deanishe.net</string>
+</dict>
+</plist>

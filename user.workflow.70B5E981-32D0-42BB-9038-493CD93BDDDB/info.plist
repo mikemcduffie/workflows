@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.danielsh.alfred.alleyoop</string>
+	<key>connections</key>
+	<dict>
+		<key>2EF2EA41-6B19-4AD0-8CBA-3808144C5BB8</key>
+		<array/>
+		<key>9A70BAA9-1964-4560-AC6F-D1FC45D00B8F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FD1C19D2-B545-4068-A3D5-D5546457C779</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FD1C19D2-B545-4068-A3D5-D5546457C779</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>81D72D83-080F-465F-91E5-9AE0DF028879</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Daniel Shannon</string>
+	<key>description</key>
+	<string>Update Alfred workflows.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Alleyoop</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>oop?</string>
+				<key>runningsubtext</key>
+				<string>Checking installed workflows...</string>
+				<key>script</key>
+				<string>python feedback.py all {query}</string>
+				<key>subtext</key>
+				<string>List all workflows with Alleyoop configured.</string>
+				<key>title</key>
+				<string>List Alleyoop Workflows</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2EF2EA41-6B19-4AD0-8CBA-3808144C5BB8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Alleyoop</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>81D72D83-080F-465F-91E5-9AE0DF028879</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>oop</string>
+				<key>runningsubtext</key>
+				<string>Checking installed workflows...</string>
+				<key>script</key>
+				<string>python feedback.py {query}</string>
+				<key>subtext</key>
+				<string>List workflows with available updates.</string>
+				<key>title</key>
+				<string>Update Workflows</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>9A70BAA9-1964-4560-AC6F-D1FC45D00B8F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>python act.py {query} 2&gt;&amp;1 | tee act.log</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FD1C19D2-B545-4068-A3D5-D5546457C779</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>2EF2EA41-6B19-4AD0-8CBA-3808144C5BB8</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+		<key>81D72D83-080F-465F-91E5-9AE0DF028879</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+		<key>9A70BAA9-1964-4560-AC6F-D1FC45D00B8F</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>FD1C19D2-B545-4068-A3D5-D5546457C779</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://alfred.daniel.sh</string>
+</dict>
+</plist>

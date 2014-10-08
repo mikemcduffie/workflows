@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.mcduffie.closesafaritab</string>
+	<key>connections</key>
+	<dict>
+		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>06289952-3774-4FB6-8652-04584798A41E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Mike McDuffie</string>
+	<key>description</key>
+	<string>Close the front tab in Safari</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Close Safari Tab</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>run script (POSIX file ((do shell script "pwd") &amp; "/close-safari-tab.scpt")) with parameters {"{query}"}</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>06289952-3774-4FB6-8652-04584798A41E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>closetab</string>
+				<key>subtext</key>
+				<string>Close the fornt tab or window for single tab (modal dialog)</string>
+				<key>text</key>
+				<string>Close Front Safari Tab</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>264A09D9-DE34-403A-9524-C67F6525811D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>The test site (http://jsbin.com/reni/2) says it all:
+
+
+Safari's and Chrome's JavaScript alerts are far too modal
+
+
+In Apple Safari there is no way to close a modal JavaScript alert(...) box, other than clicking OK.
+
+That's bad, especially as it blocks access to all other browser windows, tabs, developer tools and the browser's preferences, and even reloads the abusive page after a force quit. (It also doesn't allow for pressing Esc on the keyboard, but that would probably have the same result as clicking OK.)
+
+Chrome does slightly better than Safari. Again, one cannot simply close the tab using the mouse or keyboard, but when focusing the browser's window (rather than the popup dialog) then Chrome's File menu items do work, so one can select a menu to close the tab. (When the dialog has focus, all menu items are grayed-out.) One can also type a different URL in the abusive tab to go to another page, or use the Chrome task manager to kill the tab, after which clicking OK won't harm.
+
+Firefox makes alert use an overlay on the source page only, and then shows that page with full control of all other tabs, windows and developer tools. On a Mac, Firefox itself does not take focus then, nor makes its dock icon bounce.
+
+Internet Explorer also shows a close icon, which is effectively the same as clicking OK. (Maybe all browsers on Windows show such close icon in dialogs?)
+
+More madness: edit this demo to increase the timeout in the JavaScript, open it in multiple tabs, and try to figure out to which tab each dialog belongs.
+
+See MacKeeper has hijacked my Safari Browser (March 2012).
+
+February 2014, Safari 7, Chrome 32, Firefox 26, Mac OS X 10.9.
+
+(Nothing bad happened now that you dismissed the dialog. And I could have done the same without showing the dialog at all.)</string>
+	<key>uidata</key>
+	<dict>
+		<key>06289952-3774-4FB6-8652-04584798A41E</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.deanishe.alfred-find-example</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>B078828F-747A-46CD-BAF3-512301C167E2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B053C80C-649D-441A-AE07-F318234888AA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E7AC28A7-7A73-4987-B759-3CFDFA13C013</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Reveal in Finder</string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Dean Jackson</string>
+	<key>description</key>
+	<string>Find in specific directory</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Find</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict/>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>B053C80C-649D-441A-AE07-F318234888AA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>runningsubtext</key>
+				<string>Searching Comics HD…</string>
+				<key>script</key>
+				<string>/usr/bin/python find.py -f /Volumes/Comics\ HD/ "{query}"</string>
+				<key>title</key>
+				<string>Search Comics HD</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>B078828F-747A-46CD-BAF3-512301C167E2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.action.revealfile</string>
+			<key>uid</key>
+			<string>E7AC28A7-7A73-4987-B759-3CFDFA13C013</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>B053C80C-649D-441A-AE07-F318234888AA</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>B078828F-747A-46CD-BAF3-512301C167E2</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E7AC28A7-7A73-4987-B759-3CFDFA13C013</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

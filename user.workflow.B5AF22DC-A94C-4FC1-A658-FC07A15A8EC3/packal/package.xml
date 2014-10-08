@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Remote Desktop</name>
+  <version>1.0</version>
+  <bundle>com.surrealroad.alfred-remotedesktop</bundle>
+  <updated>1403191333</updated>
+  <file>remote_desktop.alfredworkflow</file>
+</workflow>
