@@ -56,7 +56,7 @@
 	<key>description</key>
 	<string></string>
 	<key>disabled</key>
-	<true/>
+	<false/>
 	<key>name</key>
 	<string>Chime Disable/Enable</string>
 	<key>objects</key>
